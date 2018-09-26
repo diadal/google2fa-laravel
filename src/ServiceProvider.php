@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function provides()
     {
-        return ['diadal.diadal2fa'];
+        return ['diadal.google2fa'];
     }
 
     /**
@@ -50,7 +50,7 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('diadal.diadal2fa', function ($app) {
+        $this->app->singleton('diadal.google2fa', function ($app) {
             return $app->make(Google2FA::class);
         });
 

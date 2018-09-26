@@ -14,7 +14,7 @@ class Facade extends IlluminateFacade
      */
     protected static function getFacadeAccessor()
     {
-        return 'diadal.diadal2fa';
+        return 'diadal.google2fa';
     }
 
     /**
