@@ -8,7 +8,7 @@ use Diadal\Google2FA\Google2FA as Google2FAService;
 use Diadal\Google2FA\Support\Constants as Google2FAConstants;
 use Diadal\Google2FALaravel\Events\LoggedOut;
 use Diadal\Google2FALaravel\Events\OneTimePasswordExpired;
-use Diadal\Google2FALaravel\Exceptions\InvalidSecretKey;
+use Diadal\Google2FALaravel\Exceptions\InvalidSecretCode;
 use Diadal\Google2FALaravel\Support\Auth;
 use Diadal\Google2FALaravel\Support\Config;
 use Diadal\Google2FALaravel\Support\Constants;
@@ -46,7 +46,7 @@ class Google2FA extends Google2FAService
     /**
      * Get the user Google2FA secret.
      *
-     * @throws InvalidSecretKey
+     * @throws InvalidSecretCode
      *
      * @return mixed
      */

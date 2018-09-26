@@ -6,7 +6,7 @@ use Illuminate\Http\Request as IlluminateRequest;
 use Diadal\Google2FALaravel\Events\EmptyOneTimePasswordReceived;
 use Diadal\Google2FALaravel\Events\LoginFailed;
 use Diadal\Google2FALaravel\Events\LoginSucceeded;
-use Diadal\Google2FALaravel\Exceptions\InvalidOneTimePassword;
+use Diadal\Google2FALaravel\Exceptions\InvalidOneTimePass;
 use Diadal\Google2FALaravel\Google2FA;
 
 class Authenticator extends Google2FA
@@ -63,7 +63,7 @@ class Authenticator extends Google2FA
     /**
      * Get the OTP from user input.
      *
-     * @throws InvalidOneTimePassword
+     * @throws InvalidOneTimePass
      *
      * @return mixed
      */
@@ -73,7 +73,7 @@ class Authenticator extends Google2FA
             event(new EmptyOneTimePasswordReceived());
 
             if ($this->config('throw_exceptions', true)) {
-                throw new InvalidOneTimePassword('One Time Password cannot be empty.');
+                throw new InvalidOneTimePass('One Time Password cannot be empty.');
             }
         }
 
