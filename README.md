@@ -14,7 +14,7 @@
     <a href="https://travis-ci.org/antonioribeiro/google2fa-laravel"><img alt="PHP" src="https://img.shields.io/badge/PHP-7.0%20--%207.2-brightgreen.svg?style=flat-square"></a>
 </p>
 
-### Google Two-Factor Authentication Package for Laravel
+### Google Two-Factor Authentication Package for Laravel Useing web & admin Auth Guard
 
 Google2FA is a PHP implementation of the Google Two-Factor Authentication Module, supporting the HMAC-Based One-time Password (HOTP) algorithm specified in [RFC 4226](https://tools.ietf.org/html/rfc4226) and the Time-based One-time Password (TOTP) algorithm specified in [RFC 6238](https://tools.ietf.org/html/rfc6238).
 
@@ -67,15 +67,15 @@ You don't have to do anything else, this package autoloads the Service Provider 
 Add the Service Provider and Facade alias to your `app/config/app.php` (Laravel 4.x) or `config/app.php` (Laravel 5.x):
 
 ``` php
-diadal\Google2FALaravel\ServiceProvider::class,
+Diadal\Google2FALaravel\ServiceProvider::class,
 
-'Diadal2FA' => diadal\Google2FALaravel\Facade::class,
+'Diadal2FA' => Diadal\Google2FALaravel\Facade::class,
 ```
 
 ## Publish the config file
 
 ``` php
-php artisan vendor:publish --provider="diadal\Google2FALaravel\ServiceProvider"
+php artisan vendor:publish --provider="Diadal\Google2FALaravel\ServiceProvider"
 ```
 
 ## Using It
@@ -109,7 +109,7 @@ This package has a middleware which will help you code 2FA on your app. To use i
 ``` php
 protected $routeMiddleware = [
     ...
-    '2fa' => \diadal\Google2FALaravel\Middleware::class,
+    '2fa' => \Diadal\Google2FALaravel\Middleware::class,
 ];
 ```
 
@@ -185,7 +185,7 @@ Google2FA::logout();
 If you don't want to use the Facade, you may:
 
 ``` php
-use diadal\Google2FALaravel\Support\Authenticator;
+use Diadal\Google2FALaravel\Support\Authenticator;
 
 (new Authenticator(request()))->logout();
 ```
