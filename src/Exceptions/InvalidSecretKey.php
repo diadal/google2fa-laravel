@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel\Exceptions;
+namespace Diadal\Google2FALaravel\Exceptions;
 
 use Exception;
 

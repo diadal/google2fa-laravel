@@ -1,13 +1,13 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel\Support;
+namespace Diadal\Google2FALaravel\Support;
 
 use Illuminate\Http\Request as IlluminateRequest;
-use PragmaRX\Google2FALaravel\Events\EmptyOneTimePasswordReceived;
-use PragmaRX\Google2FALaravel\Events\LoginFailed;
-use PragmaRX\Google2FALaravel\Events\LoginSucceeded;
-use PragmaRX\Google2FALaravel\Exceptions\InvalidOneTimePassword;
-use PragmaRX\Google2FALaravel\Google2FA;
+use Diadal\Google2FALaravel\Events\EmptyOneTimePasswordReceived;
+use Diadal\Google2FALaravel\Events\LoginFailed;
+use Diadal\Google2FALaravel\Events\LoginSucceeded;
+use Diadal\Google2FALaravel\Exceptions\InvalidOneTimePassword;
+use Diadal\Google2FALaravel\Google2FA;
 
 class Authenticator extends Google2FA
 {

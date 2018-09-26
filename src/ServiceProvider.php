@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel;
+namespace Diadal\Google2FALaravel;
 
 use Illuminate\Support\ServiceProvider as IlluminateServiceProvider;
 
@@ -19,7 +19,7 @@ class ServiceProvider extends IlluminateServiceProvider
     private function configurePaths()
     {
         $this->publishes([
-            __DIR__.'/config/config.php' => config_path('google2fa.php'),
+            __DIR__.'/config/config.php' => config_path('diadal2fa.php'),
         ]);
     }
 
@@ -29,7 +29,7 @@ class ServiceProvider extends IlluminateServiceProvider
     private function mergeConfig()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/config/config.php', 'google2fa'
+            __DIR__.'/config/config.php', 'diadal2fa'
         );
     }
 
@@ -40,7 +40,7 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function provides()
     {
-        return ['pragmarx.google2fa'];
+        return ['diadal.diadal2fa'];
     }
 
     /**
@@ -50,7 +50,7 @@ class ServiceProvider extends IlluminateServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('pragmarx.google2fa', function ($app) {
+        $this->app->singleton('diadal.diadal2fa', function ($app) {
             return $app->make(Google2FA::class);
         });
 

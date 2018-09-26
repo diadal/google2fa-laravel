@@ -1,6 +1,6 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel\Support;
+namespace Diadal\Google2FALaravel\Support;
 
 trait Auth
 {
@@ -32,7 +32,7 @@ trait Auth
      */
     protected function getUser()
     {
-        return $this->getAuth()->user();
+        return $this->getAuth()->user() ?? \Auth::guard('admin')->user();
     }
 
     abstract public function config($string, $children = []);

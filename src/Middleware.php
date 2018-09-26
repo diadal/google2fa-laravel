@@ -1,9 +1,9 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel;
+namespace Diadal\Google2FALaravel;
 
 use Closure;
-use PragmaRX\Google2FALaravel\Support\Authenticator;
+use Diadal\Google2FALaravel\Support\Authenticator;
 
 class Middleware
 {

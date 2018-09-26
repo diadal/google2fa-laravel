@@ -1,15 +1,16 @@
 # Google2FA for Laravel
 
 <p align="center">
-    <a href="https://packagist.org/packages/pragmarx/google2fa-laravel"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/pragmarx/google2fa-laravel.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/diadal/google2fa-laravel"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/diadal/google2fa-laravel.svg?style=flat-square"></a>
     <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square"></a>
     <a href="https://scrutinizer-ci.com/g/antonioribeiro/google2fa-laravel/?branch=master"><img alt="Code Quality" src="https://img.shields.io/scrutinizer/g/antonioribeiro/google2fa-laravel.svg?style=flat-square"></a>
     <a href="https://travis-ci.org/antonioribeiro/google2fa-laravel"><img alt="Build" src="https://img.shields.io/travis/antonioribeiro/google2fa-laravel.svg?style=flat-square"></a>
+    <a href="https://packagist.org/packages/diadal/google2fa-laravel"><img alt="Downloads" src="https://img.shields.io/packagist/dt/diadal/google2fa-laravel.svg?style=flat-square"></a>
 </p>
 <p align="center">
-    <a href="https://packagist.org/packages/pragmarx/google2fa-laravel"><img alt="Downloads" src="https://img.shields.io/packagist/dt/pragmarx/google2fa-laravel.svg?style=flat-square"></a>
     <a href="https://scrutinizer-ci.com/g/antonioribeiro/google2fa-laravel/?branch=master"><img alt="Coverage" src="https://img.shields.io/scrutinizer/coverage/g/antonioribeiro/google2fa-laravel.svg?style=flat-square"></a>
     <a href="https://styleci.io/repos/94630851"><img alt="StyleCI" src="https://styleci.io/repos/94630851/shield"></a>
+    <a href="https://insight.sensiolabs.com/projects/156fbef1-b03f-4fca-ba97-57874b7a35bf"><img alt="SensioLabsInsight" src="https://img.shields.io/sensiolabs/i/156fbef1-b03f-4fca-ba97-57874b7a35bf.svg?style=flat-square"></a>
     <a href="https://travis-ci.org/antonioribeiro/google2fa-laravel"><img alt="PHP" src="https://img.shields.io/badge/PHP-7.0%20--%207.2-brightgreen.svg?style=flat-square"></a>
 </p>
 
@@ -27,7 +28,7 @@ if you need to create recovery or backup codes to provide a way for your users t
 
 ## Demos, Example & Playground
 
-Please check the [Google2FA Package Playground](https://pragmarx.com/playground/google2fa#/).
+Please check the [Google2FA Package Playground](https://diadal.com/playground/google2fa#/).
 
 ![playground](https://github.com/antonioribeiro/google2fa/raw/master/docs/playground.jpg)
 
@@ -43,19 +44,13 @@ You can scan the QR code on [this (old) demo page](https://antoniocarlosribeiro.
 | 5.0-5.1 | <= 1.0.1  |                   |
 | 5.2-5.6 | >= 2.0.0  | >= 0.2.0          |
 
-Before Google2FA 2.0 (Laravel 5.1) you have to install `pragmarx/google2fa:~1.0`, because this package was both a Laravel package and a PHP (agnostic).   
-
-## Demo
-
-Click [here](https://pragmarx.com/google2fa/middleware) to see the middleware demo:
-
-![middleware](docs/middleware.jpg)
+ 
 
 ## Installing
 
 Use Composer to install it:
 
-    composer require pragmarx/google2fa-laravel
+    composer require diadal/google2fa-laravel
 
 If you prefer inline QRCodes instead of a Google generated url, you'll need to install [BaconQrCode](https://github.com/Bacon/BaconQrCode):
 
@@ -72,15 +67,15 @@ You don't have to do anything else, this package autoloads the Service Provider 
 Add the Service Provider and Facade alias to your `app/config/app.php` (Laravel 4.x) or `config/app.php` (Laravel 5.x):
 
 ``` php
-PragmaRX\Google2FALaravel\ServiceProvider::class,
+diadal\Google2FALaravel\ServiceProvider::class,
 
-'Google2FA' => PragmaRX\Google2FALaravel\Facade::class,
+'Diadal2FA' => diadal\Google2FALaravel\Facade::class,
 ```
 
 ## Publish the config file
 
 ``` php
-php artisan vendor:publish --provider="PragmaRX\Google2FALaravel\ServiceProvider"
+php artisan vendor:publish --provider="diadal\Google2FALaravel\ServiceProvider"
 ```
 
 ## Using It
@@ -88,15 +83,15 @@ php artisan vendor:publish --provider="PragmaRX\Google2FALaravel\ServiceProvider
 #### Use the Facade
 
 ``` php
-use Google2FA;
+use Diadal2FA;
 
-return Google2FA::generateSecretKey();
+return Diadal2FA::generateSecretKey();
 ```
 
 #### In Laravel you can use the IoC Container
 
 ``` php
-$google2fa = app('pragmarx.google2fa');
+$google2fa = app('diadal.google2fa');
 
 return $google2fa->generateSecretKey();
 ```
@@ -105,12 +100,16 @@ return $google2fa->generateSecretKey();
 
 This package has a middleware which will help you code 2FA on your app. To use it, you just have to:
 
+![middleware](docs/middleware.jpg)
+
+## Using the middleware
+
 ### Add the middleware to your Kernel.php:
 
 ``` php
 protected $routeMiddleware = [
     ...
-    '2fa' => \PragmaRX\Google2FALaravel\Middleware::class,
+    '2fa' => \diadal\Google2FALaravel\Middleware::class,
 ];
 ```
 
@@ -186,7 +185,7 @@ Google2FA::logout();
 If you don't want to use the Facade, you may:
 
 ``` php
-use PragmaRX\Google2FALaravel\Support\Authenticator;
+use diadal\Google2FALaravel\Support\Authenticator;
 
 (new Authenticator(request()))->logout();
 ```

@@ -1,19 +1,19 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel;
+namespace Diadal\Google2FALaravel;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request as IlluminateRequest;
-use PragmaRX\Google2FA\Google2FA as Google2FAService;
-use PragmaRX\Google2FA\Support\Constants as Google2FAConstants;
-use PragmaRX\Google2FALaravel\Events\LoggedOut;
-use PragmaRX\Google2FALaravel\Events\OneTimePasswordExpired;
-use PragmaRX\Google2FALaravel\Exceptions\InvalidSecretKey;
-use PragmaRX\Google2FALaravel\Support\Auth;
-use PragmaRX\Google2FALaravel\Support\Config;
-use PragmaRX\Google2FALaravel\Support\Constants;
-use PragmaRX\Google2FALaravel\Support\Request;
-use PragmaRX\Google2FALaravel\Support\Session;
+use Diadal\Google2FA\Google2FA as Google2FAService;
+use Diadal\Google2FA\Support\Constants as Google2FAConstants;
+use Diadal\Google2FALaravel\Events\LoggedOut;
+use Diadal\Google2FALaravel\Events\OneTimePasswordExpired;
+use Diadal\Google2FALaravel\Exceptions\InvalidSecretKey;
+use Diadal\Google2FALaravel\Support\Auth;
+use Diadal\Google2FALaravel\Support\Config;
+use Diadal\Google2FALaravel\Support\Constants;
+use Diadal\Google2FALaravel\Support\Request;
+use Diadal\Google2FALaravel\Support\Session;
 
 class Google2FA extends Google2FAService
 {

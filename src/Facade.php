@@ -1,9 +1,9 @@
 <?php
 
-namespace PragmaRX\Google2FALaravel;
+namespace Diadal\Google2FALaravel;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
-use PragmaRX\Google2FALaravel\Support\Authenticator;
+use Diadal\Google2FALaravel\Support\Authenticator;
 
 class Facade extends IlluminateFacade
 {
@@ -14,7 +14,7 @@ class Facade extends IlluminateFacade
      */
     protected static function getFacadeAccessor()
     {
-        return 'pragmarx.google2fa';
+        return 'diadal.diadal2fa';
     }
 
     /**

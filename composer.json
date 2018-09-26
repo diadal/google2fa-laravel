@@ -1,13 +1,12 @@
 {
-    "name": "pragmarx/google2fa-laravel",
+    "name": "diadal/google2fa-laravel",
     "description": "A One Time Password Authentication package, compatible with Google Authenticator.",
     "keywords": ["authentication", "two factor authentication", "google2fa", "laravel"],
     "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "Antonio Carlos Ribeiro",
-            "email": "acr@antoniocarlosribeiro.com",
-            "role": "Creator & Designer"
+            "name": "Diadal",
+            "email": "info@diadal.com.ng"
         }
     ],
     "require": {
@@ -21,8 +20,8 @@
     },
     "autoload": {
         "psr-4": {
-            "PragmaRX\\Google2FALaravel\\": "src/",
-            "PragmaRX\\Google2FALaravel\\Tests\\": "tests/"
+            "Diadal\\Google2FALaravel\\": "src/",
+            "Diadal\\Google2FALaravel\\Tests\\": "tests/"
         }
     },
     "extra": {
@@ -33,10 +32,10 @@
         },
         "laravel": {
             "providers": [
-                "PragmaRX\\Google2FALaravel\\ServiceProvider"
+                "Diadal\\Google2FALaravel\\ServiceProvider"
             ],
             "aliases": {
-                "Google2FA": "PragmaRX\\Google2FALaravel\\Facade"
+                "Diadal2FA": "Diadal\\Google2FALaravel\\Facade"
             }
         }
     },
