@@ -1,4 +1,4 @@
-# Google2FA for Laravel
+# Google2FA for Laravel Using Web & Admin Auth Guard
 
 <p align="center">
     <a href="https://packagist.org/packages/diadal/google2fa-laravel"><img alt="Latest Stable Version" src="https://img.shields.io/packagist/v/diadal/google2fa-laravel.svg?style=flat-square"></a>
